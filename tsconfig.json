@@ -30,7 +30,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "lib.d.ts"],
   "exclude": [
     "node_modules"
   ]
