@@ -32,7 +32,10 @@ a. Optimize images by using image-webpack-loader or equivalent.
 
 b. Compress and minify assets like JavaScript and CSS in the production build.
 
+[//]: # (c. Implement creating optimized SVG sprites by using svg-chunk-webpack-plugin or equivalent)
+
 [//]: # (d. Implement tree shaking to remove unused code.)
+
 
 Performance Optimization:
 
@@ -50,4 +53,10 @@ Performance Optimization:
 
 a. Set up webpack dev server with hot module replacement (HMR) for faster development iteration.
 
-[//]: # (b. Implement proxying for API requests during development.)
+b. Implement proxying for API requests during development.
+
+### Commands:
+Run the server: 
+```node server/server.js```
+and then run:
+```npm run start```

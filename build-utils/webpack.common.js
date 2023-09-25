@@ -7,7 +7,9 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[hash].js',
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].chunk.js',
+    publicPath: 'dist/',
     clean: true,
   },
 
@@ -39,13 +41,13 @@ module.exports = {
         test: /\.(woff(2)?|ttf|eot|)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext]',
+          filename: 'fonts/[hash][ext]',
         },
       },
       {
         test: /\.(jpe?g|png|svg)$/,
         generator: {
-          filename: 'img/[name][ext]',
+          filename: 'img/[hash][ext]',
         },
         use: [
           {
@@ -79,12 +81,5 @@ module.exports = {
 
   resolve: {
     extensions: ['*', '.js', '.jsx', '.tsx'],
-  },
-
-  devServer: {
-    static: path.resolve(__dirname, '../dist'),
-    port: 3000,
-    hot: true,
-    // open: true,
   },
 };

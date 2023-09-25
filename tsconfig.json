@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "lib": ["ES7", "DOM"],
     // Type Checking Configuration
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -28,10 +29,8 @@
 
     // Interop Constraints Configuration
     "esModuleInterop": true,
-    "isolatedModules": true,
+    "isolatedModules": true
   },
   "include": ["src/**/*", "lib.d.ts"],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
