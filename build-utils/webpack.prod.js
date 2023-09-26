@@ -1,7 +1,17 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const getNodeModulesRegExp = (deps) => new RegExp(`[\\/]node_modules[\\/]${deps.join('|')}`);
-const excludeNodeModulesRegExp = (deps) => new RegExp(`[\\/]node_modules[\\/](?!(${deps.join('|')})).*`);
+const getNodeModulesRegExp = (deps) => new RegExp(`[\\\\/]node_modules[\\\\/]${deps.join('|')}`);
+const excludeNodeModulesRegExp = (deps) =>
+  new RegExp(`[\\\\/]node_modules[\\\\/](?!(${deps.length ? deps.join('|') : 'no module'})).*`);
+
+const deps = { react: ['react', 'react-dom', 'react-router-dom'] };
+const allDeps = Object.keys(deps).reduce((acc, key) => acc.concat(deps[key]), []);
+
+const getCacheGroup = (name, exclude) => ({
+  test: exclude ? excludeNodeModulesRegExp(allDeps) : getNodeModulesRegExp(deps[name]),
+  name,
+  chunks: 'all',
+});
 
 module.exports = {
   mode: 'production',
@@ -26,18 +36,13 @@ module.exports = {
       cacheGroups: {
         moduleIds: 'deterministic',
         runtimeChunk: 'single',
-        defaultVendors: {
+        react: getCacheGroup('react'),
+        vendor: getCacheGroup('vendor', true),
+        /*defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
+          name: 'vendor',
           chunks: 'all',
-        },
-        /*
-        reactVendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
-          name: 'vendor-react',
-          chunks: 'all',
-        },
-         */
+        },*/
       },
     },
   },

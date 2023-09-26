@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: path.resolve(__dirname, '../src/template/index.tsx'),
@@ -17,6 +18,7 @@ module.exports = {
       template: path.resolve(__dirname, '../src/template/index.html'),
     }),
     new ESLintWebpackPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
 
   module: {
