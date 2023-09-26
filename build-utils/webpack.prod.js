@@ -1,5 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const getNodeModulesRegExp = (deps) => new RegExp(`[\\/]node_modules[\\/]${deps.join('|')}`);
+const excludeNodeModulesRegExp = (deps) => new RegExp(`[\\/]node_modules[\\/](?!(${deps.join('|')})).*`);
+
 module.exports = {
   mode: 'production',
   target: 'browserslist',
