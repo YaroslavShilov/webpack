@@ -1,8 +1,8 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Item } from './Item';
 
-const MoreCode = lazy(() => import('./MoreCode'));
-const MuchMoreCode = lazy(() => import('./MuchMoreCode'));
+const MoreCode = lazy(() => import(/* webpackChunkName: "more-code" */ './MoreCode'));
+const MuchMoreCode = lazy(() => import(/* webpackChunkName: "much-more-code" */ './MuchMoreCode'));
 
 const imgStyle = {
   height: 50,

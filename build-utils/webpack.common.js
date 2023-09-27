@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
       template: path.resolve(__dirname, '../src/template/index.html'),
     }),
     new ESLintWebpackPlugin(),
+    new WebpackManifestPlugin({}),
     // new BundleAnalyzerPlugin(),
   ],
 
@@ -81,6 +83,6 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.tsx'],
+    extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
   },
 };

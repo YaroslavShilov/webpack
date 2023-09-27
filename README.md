@@ -1,4 +1,3 @@
-- chunks
 ## Task Title: Advanced Webpack Configuration and Optimization
 
 ### Task Description:
@@ -20,11 +19,11 @@ d. Implement source mapping in the development environment for better debugging.
 
 ### Code Splitting:
 
-[//]: # (a. Implement code splitting using dynamic imports. Split your application into at least three chunks: one for the main application code, one for vendor dependencies &#40;e.g., third-party libraries&#41;, and one for asynchronous or lazy-loaded routes/modules.)
+a. Implement code splitting using dynamic imports. Split your application into at least three chunks: one for the main application code, one for vendor dependencies (e.g., third-party libraries), and one for asynchronous or lazy-loaded routes/modules.
 
-[//]: # (b. Optimize the chunk naming to include content hashes for cache-busting.)
+b. Optimize the chunk naming to include content hashes for cache-busting.
 
-[//]: # (c. Configure webpack to generate a manifest.json file to manage chunk mapping.)
+c. Configure webpack to generate a manifest.json file to manage chunk mapping.
 
 ### Asset Optimization:
 
@@ -34,20 +33,22 @@ b. Compress and minify assets like JavaScript and CSS in the production build.
 
 [//]: # (c. Implement creating optimized SVG sprites by using svg-chunk-webpack-plugin or equivalent)
 
-[//]: # (d. Implement tree shaking to remove unused code.)
+[//]: # (d. Implement img convertor jpg/png to webp)
+
+[//]: # (e. Implement tree shaking to remove unused code.)
 
 
 Performance Optimization:
 
 [//]: # (a. Set up performance budgets to prevent assets from growing too large.)
 
-[//]: # (b. Implement caching strategies for assets in the production build.)
+b. Implement caching strategies for assets in the production build.
 
 ### Advanced Configuration:
 
 [//]: # (a. Create environment-specific configuration files &#40;e.g., .env.development and .env.production&#41; and use dotenv-webpack to load environment variables.)
 
-[//]: # (b. Implement code splitting based on routes using react-loadable or a similar library if you are using React.)
+b. Implement code splitting based on routes using react-loadable or a similar library if you are using React.
 
 ### Webpack Dev Server:
 
