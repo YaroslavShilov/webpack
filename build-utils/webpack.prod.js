@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const getNodeModulesRegExp = (deps) => new RegExp(`[\\\\/]node_modules[\\\\/]${deps.join('|')}`);
 const excludeNodeModulesRegExp = (deps) =>
@@ -32,6 +33,8 @@ module.exports = {
     ],
   },
   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
     runtimeChunk: { name: 'runtime' },
     splitChunks: {
       cacheGroups: {

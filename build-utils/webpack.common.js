@@ -48,7 +48,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpe?g|png|svg)$/,
+        test: /\.(jpe?g|png|svg|webp)$/,
         generator: {
           filename: 'img/[contenthash:10][ext]',
         },

@@ -31,11 +31,7 @@ a. Optimize images by using image-webpack-loader or equivalent.
 
 b. Compress and minify assets like JavaScript and CSS in the production build.
 
-[//]: # (c. Implement creating optimized SVG sprites by using svg-chunk-webpack-plugin or equivalent)
-
-[//]: # (d. Implement img convertor jpg/png to webp)
-
-[//]: # (e. Implement tree shaking to remove unused code.)
+c. Implement tree shaking to remove unused code.
 
 
 Performance Optimization:

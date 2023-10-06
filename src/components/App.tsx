@@ -1,11 +1,12 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Item } from './Item';
+import { Picture } from './Picture';
 
 const MoreCode = lazy(() => import(/* webpackChunkName: "more-code" */ './MoreCode'));
 const MuchMoreCode = lazy(() => import(/* webpackChunkName: "much-more-code" */ './MuchMoreCode'));
 
 const imgStyle = {
-  height: 50,
+  height: 150,
 };
 
 type Post = {
@@ -43,6 +44,15 @@ export const App = () => {
       <img style={imgStyle} src={require('../img/jpg.jpg')} alt="jpg" />
       <img style={imgStyle} src={require('../img/png.png')} alt="png" />
       <img style={imgStyle} src={require('../img/svg.svg')} alt="svg" />
+      <Picture
+        style={imgStyle}
+        src={require('../img/webp.webp')}
+        fallbackSrc={require('../img/webp.jpg')}
+        alt="webp - jpg"
+        media="(max-width: 1020px)"
+        mediaSrc={require('../img/webp-mob.webp')}
+        mediaFallbackSrc={require('../img/webp-mob.jpg')}
+      />
       <Item title="Hello" />
       {posts && posts.map(({ id, title, author }) => <Item key={id} title={title} text={author} />)}
       <button onClick={toggleBlock('moreCode')}>{isVisible('moreCode') ? 'hide' : 'show'} more code</button>
