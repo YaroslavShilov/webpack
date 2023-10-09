@@ -36,7 +36,7 @@ c. Implement tree shaking to remove unused code.
 
 Performance Optimization:
 
-[//]: # (a. Set up performance budgets to prevent assets from growing too large.)
+a. Set up performance budgets to prevent assets from growing too large.
 
 b. Implement caching strategies for assets in the production build.
 

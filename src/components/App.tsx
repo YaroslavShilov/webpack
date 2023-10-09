@@ -16,6 +16,8 @@ type Post = {
 };
 
 export const App = () => {
+  // @ts-ignore
+  console.log('env: ', process.env['REACT_APP_KEY']);
   const [posts, setPosts] = useState<Post[]>([]);
   // this code for checking codeSplitting
   const [blocks, setBlocks] = useState<string[]>([]);

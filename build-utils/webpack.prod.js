@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const getNodeModulesRegExp = (deps) => new RegExp(`[\\\\/]node_modules[\\\\/]${deps.join('|')}`);
 const excludeNodeModulesRegExp = (deps) =>
@@ -21,6 +22,9 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[contenthash:10].css',
+    }),
+    new Dotenv({
+      path: '.env.production',
     }),
   ],
   module: {
@@ -49,5 +53,8 @@ module.exports = {
         },*/
       },
     },
+  },
+  performance: {
+    hints: 'error',
   },
 };

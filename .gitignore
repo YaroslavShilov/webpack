@@ -23,5 +23,11 @@ yarn-error.log*
 #phpstorm
 .idea/
 **/.idea/
+
 #folder icon
 desktop.ini
+
+#env
+.env
+.env.development
+.env.production
