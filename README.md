@@ -42,7 +42,7 @@ b. Implement caching strategies for assets in the production build.
 
 ### Advanced Configuration:
 
-[//]: # (a. Create environment-specific configuration files &#40;e.g., .env.development and .env.production&#41; and use dotenv-webpack to load environment variables.)
+a. Create environment-specific configuration files (e.g., .env.development and .env.production) and use dotenv-webpack to load environment variables.
 
 b. Implement code splitting based on routes using react-loadable or a similar library if you are using React.
 
