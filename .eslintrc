@@ -39,7 +39,7 @@
     "prettier/prettier": ["error"],
     "react/jsx-props-no-spreading": "off",
     "prefer-promise-reject-errors": "off",
-    "camelcase": "off",
+    "camelcase": "off"
   },
   "env": {
     "browser": true,
