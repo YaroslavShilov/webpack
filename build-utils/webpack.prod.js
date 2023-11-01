@@ -1,6 +1,8 @@
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const getNodeModulesRegExp = (deps) => new RegExp(`[\\\\/]node_modules[\\\\/](${deps.join('|')})`);
 const excludeNodeModulesRegExp = (deps) =>
@@ -20,6 +22,9 @@ module.exports = {
   target: 'browserslist',
   devtool: 'source-map',
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../src/template/index.html'),
+    }),
     new MiniCssExtractPlugin({
       filename: '[contenthash:10].css',
     }),
