@@ -7,7 +7,7 @@ module.exports = {
   target: 'web',
   devtool: 'eval-source-map',
   devServer: {
-    static: path.resolve(__dirname, '..', 'dist'),
+    static: path.resolve(__dirname, '..', 'build'),
     port: 3000,
     hot: true,
     // open: true,

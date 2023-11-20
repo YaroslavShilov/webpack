@@ -7,7 +7,7 @@ module.exports = {
   entry: path.resolve(__dirname, '..', 'src', 'template', 'index.tsx'),
 
   output: {
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, '..', 'build'),
     filename: '[name].[contenthash:10].js',
     chunkFilename: '[name].[contenthash:10].chunk.js',
     clean: true,
