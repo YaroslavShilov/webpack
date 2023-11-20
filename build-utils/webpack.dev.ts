@@ -1,6 +1,6 @@
-const path = require('path');
-const Dotenv = require('dotenv-webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import Dotenv from 'dotenv-webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
   mode: 'development',
@@ -10,7 +10,7 @@ module.exports = {
     static: path.resolve(__dirname, '..', 'build'),
     port: 3000,
     hot: true,
-    // open: true,
+    open: true,
     compress: true,
     historyApiFallback: true,
     proxy: {

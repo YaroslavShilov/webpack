@@ -1,9 +1,10 @@
-const path = require('path');
-const ESLintWebpackPlugin = require('eslint-webpack-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+import path from 'path';
+import ESLintWebpackPlugin from 'eslint-webpack-plugin';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import webpack from 'webpack';
 
-module.exports = {
+export const commonConfig: webpack.Configuration = {
   entry: path.resolve(__dirname, '..', 'src', 'template', 'index.tsx'),
 
   output: {
@@ -16,7 +17,7 @@ module.exports = {
   plugins: [
     new ESLintWebpackPlugin(),
     new WebpackManifestPlugin({}),
-    // new BundleAnalyzerPlugin(),
+    //new BundleAnalyzerPlugin()
   ],
 
   module: {

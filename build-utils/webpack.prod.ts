@@ -1,17 +1,17 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-const getNodeModulesRegExp = (deps) => new RegExp(`[\\\\/]node_modules[\\\\/](${deps.join('|')})`);
-const excludeNodeModulesRegExp = (deps) =>
+const getNodeModulesRegExp = (deps: string[]) => new RegExp(`[\\\\/]node_modules[\\\\/](${deps.join('|')})`);
+const excludeNodeModulesRegExp = (deps: string[]) =>
   new RegExp(`[\\\\/]node_modules[\\\\/](?!(${deps.length ? deps.join('|') : 'no module'})).*`);
 
-const deps = { react: ['react', 'react-dom', 'react-router-dom'] };
-const allDeps = Object.keys(deps).reduce((acc, key) => acc.concat(deps[key]), []);
+const deps: Record<string, string[]> = { react: ['react', 'react-dom', 'react-router-dom'] };
+const allDeps = Object.keys(deps).reduce((acc: string[], key: string) => acc.concat(deps[key]), []);
 
-const getCacheGroup = (name, exclude) => ({
+const getCacheGroup = (name: string, exclude?: boolean) => ({
   test: exclude ? excludeNodeModulesRegExp(allDeps) : getNodeModulesRegExp(deps[name]),
   name,
   chunks: 'all',

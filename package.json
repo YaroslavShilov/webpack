@@ -4,8 +4,8 @@
   "description": "- react\r - react-redux\r - ts\r - es-lint\r - prettier\r - lodash\r - chunks\r - babel\r - auto-reload\r - promises\r - new features\r - dynamic imports\r - webpack-bundle-analyzer\r - fonts\r - css minimize\r - js minimize\r - img minimize\r ## Task Title: Advanced Webpack Configuration and Optimization",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --env env=dev",
-    "build": "webpack --env env=prod"
+    "start": "webpack serve --env mode=dev",
+    "build": "webpack --env mode=prod"
   },
   "author": "",
   "license": "ISC",
@@ -14,8 +14,12 @@
     "@babel/eslint-parser": "7.22.15",
     "@babel/preset-env": "7.22.20",
     "@babel/preset-react": "7.22.15",
+    "@types/dotenv-webpack": "7.0.7",
     "@types/node": "20.6.3",
     "@types/webpack": "5.28.5",
+    "@types/webpack-bundle-analyzer": "4.6.3",
+    "@types/webpack-dev-server": "4.7.2",
+    "@types/webpack-merge": "5.0.0",
     "@typescript-eslint/eslint-plugin": "6.7.2",
     "@typescript-eslint/parser": "6.7.2",
     "babel-loader": "9.1.3",

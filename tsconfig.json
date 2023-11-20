@@ -2,6 +2,8 @@
   "compilerOptions": {
     "lib": ["ES7", "DOM"],
     // Type Checking Configuration
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "noFallthroughCasesInSwitch": true,
@@ -21,7 +23,8 @@
 
     // Modules Configuration
     "baseUrl": "./",
-    "module": "ES2022",
+    "target": "es5",
+    "module": "ESNext",
     "moduleResolution": "node",
 
     // Language and Environment Configuration
@@ -30,6 +33,11 @@
     // Interop Constraints Configuration
     "esModuleInterop": true,
     "isolatedModules": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
   },
   "include": ["src/**/*", "lib.d.ts"],
   "exclude": ["node_modules"],
