@@ -4,10 +4,10 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/template/index.tsx'),
+  entry: path.resolve(__dirname, '..', 'src', 'template', 'index.tsx'),
 
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '..', 'dist'),
     filename: '[name].[contenthash:10].js',
     chunkFilename: '[name].[contenthash:10].chunk.js',
     clean: true,

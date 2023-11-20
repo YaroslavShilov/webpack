@@ -7,7 +7,7 @@ module.exports = {
   target: 'web',
   devtool: 'eval-source-map',
   devServer: {
-    static: path.resolve(__dirname, '../dist'),
+    static: path.resolve(__dirname, '..', 'dist'),
     port: 3000,
     hot: true,
     // open: true,
@@ -25,7 +25,7 @@ module.exports = {
       path: '.env.development',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/template/index.html'),
+      template: path.resolve(__dirname, '..', 'src', 'template', 'index.html'),
       publicPath: '/',
     }),
   ],

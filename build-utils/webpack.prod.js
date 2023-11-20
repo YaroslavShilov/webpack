@@ -23,7 +23,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/template/index.html'),
+      template: path.resolve(__dirname, '..', 'src', 'template', 'index.html'),
     }),
     new MiniCssExtractPlugin({
       filename: '[contenthash:10].css',
