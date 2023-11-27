@@ -1,8 +1,4 @@
-import path from 'path';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import Dotenv from 'dotenv-webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const getNodeModulesRegExp = (deps: string[]) => new RegExp(`[\\\\/]node_modules[\\\\/](${deps.join('|')})`);
 const excludeNodeModulesRegExp = (deps: string[]) =>
@@ -18,29 +14,6 @@ const getCacheGroup = (name: string, exclude?: boolean) => ({
 });
 
 module.exports = {
-  mode: 'production',
-  target: 'browserslist',
-  devtool: 'source-map',
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', 'src', 'template', 'index.html'),
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[contenthash:10].css',
-    }),
-    new Dotenv({
-      path: '.env.production',
-    }),
-  ],
-  module: {
-    rules: [
-      {
-        test: /.s?[a|c]ss$/,
-        exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-      },
-    ],
-  },
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],

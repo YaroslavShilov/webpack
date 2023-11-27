@@ -13,7 +13,13 @@
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".json"
+        ]
       }
     }
   },
@@ -23,23 +29,56 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "jsx-a11y", "prettier"],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "prettier"
+  ],
   "rules": {
     "semi": 0,
-    "react/jsx-indent": ["error", 2],
-    "max-len": [2, 120, 2],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "max-len": [
+      2,
+      120,
+      2
+    ],
     "no-console": "warn",
-    "comma-dangle": ["error", "never"],
-    "react/prop-types": [2, { "ignore": ["history"] }],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "react/prop-types": [
+      2,
+      {
+        "ignore": [
+          "history"
+        ]
+      }
+    ],
     "jsx-a11y/label-has-associated-control": "off",
-    "react/jsx-filename-extension": [1,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
     ],
     "react/no-set-state": "off",
-    "prettier/prettier": ["error"],
+    "prettier/prettier": [
+      "error"
+    ],
     "react/jsx-props-no-spreading": "off",
     "prefer-promise-reject-errors": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-ts-ignore": "off"
   },
   "env": {
     "browser": true,

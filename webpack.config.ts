@@ -1,14 +1,22 @@
-import { merge } from 'webpack-merge';
-import { commonConfig } from './build-utils/webpack.common';
-
-type Mode = 'prod' | 'dev';
+import { BuildMode } from './config/build/types';
+import { buildWebpack } from './config/build/buildWebpack';
+import path from 'path';
 
 interface Env {
-  mode: Mode;
+  mode: BuildMode;
+  port: number;
+  analyzer?: boolean;
 }
 
-export default (env: Env) => {
-  const envConfig = require(`./build-utils/webpack.${env.mode}.ts`);
-
-  return merge(commonConfig, envConfig);
-};
+export default ({ port, mode, analyzer }: Env) =>
+  buildWebpack({
+    port: port || 3000,
+    mode: mode || 'development',
+    paths: {
+      output: path.resolve(__dirname, 'build'),
+      entry: path.resolve(__dirname, 'src', 'index.tsx'),
+      html: path.resolve(__dirname, 'public', 'index.html'),
+      src: path.resolve(__dirname, 'src'),
+    },
+    analyzer,
+  });

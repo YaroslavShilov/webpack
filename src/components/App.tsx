@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Item } from './Item';
 import { Picture } from './Picture';
+import { Link, Outlet } from 'react-router-dom';
 
 const MoreCode = lazy(() => import(/* webpackChunkName: "more-code" */ './MoreCode'));
 const MuchMoreCode = lazy(() => import(/* webpackChunkName: "much-more-code" */ './MuchMoreCode'));
@@ -68,6 +69,21 @@ export const App = () => {
           <Content key={name} name={name} />
         ))}
       </Suspense>
+      <div>
+        <p>Links:</p>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/shop">Shop</Link>
+          </li>
+        </ul>
+      </div>
+      <Outlet />
     </div>
   );
 };

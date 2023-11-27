@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["ES7", "DOM"],
+    "lib": [
+      "ES7",
+      "DOM"
+    ],
     // Type Checking Configuration
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -8,11 +11,10 @@
     "allowUnusedLabels": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitThis": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitOverride": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
-
     // Strict Rules - v4.8
     "alwaysStrict": true,
     "strictBindCallApply": true,
@@ -20,16 +22,13 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "useUnknownInCatchVariables": true,
-
     // Modules Configuration
     "baseUrl": "./",
     "target": "es5",
     "module": "ESNext",
     "moduleResolution": "node",
-
     // Language and Environment Configuration
-    "jsx": "react",
-
+    "jsx": "react-jsx",
     // Interop Constraints Configuration
     "esModuleInterop": true,
     "isolatedModules": true
@@ -39,8 +38,13 @@
       "module": "CommonJS"
     }
   },
-  "include": ["src/**/*", "lib.d.ts"],
-  "exclude": ["node_modules"],
+  "include": [
+    "src/**/*",
+    "environment.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "allow-env": true,
   "enable-env": true
 }
