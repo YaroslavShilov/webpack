@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { Item } from './Item';
-import { Picture } from './Picture';
 import { Link, Outlet } from 'react-router-dom';
+import { Picture } from '@/components/Picture';
 
 const MoreCode = lazy(() => import(/* webpackChunkName: "more-code" */ './MoreCode'));
 const MuchMoreCode = lazy(() => import(/* webpackChunkName: "much-more-code" */ './MuchMoreCode'));
@@ -44,17 +44,17 @@ export const App = () => {
 
   return (
     <div>
-      <img style={imgStyle} src={require('../img/jpg.jpg')} alt="jpg" />
-      <img style={imgStyle} src={require('../img/png.png')} alt="png" />
-      <img style={imgStyle} src={require('../img/svg.svg')} alt="svg" />
+      <img style={imgStyle} src={require('@/assets/jpg.jpg')} alt="jpg" />
+      <img style={imgStyle} src={require('@/assets/png.png')} alt="png" />
+      <img style={imgStyle} src={require('@/assets/svg.svg')} alt="svg" />
       <Picture
         style={imgStyle}
-        src={require('../img/webp.webp')}
-        fallbackSrc={require('../img/webp.jpg')}
+        src={require('../assets/webp.webp')}
+        fallbackSrc={require('../assets/webp.jpg')}
         alt="webp - jpg"
         media="(max-width: 1020px)"
-        mediaSrc={require('../img/webp-mob.webp')}
-        mediaFallbackSrc={require('../img/webp-mob.jpg')}
+        mediaSrc={require('../assets/webp-mob.webp')}
+        mediaFallbackSrc={require('../assets/webp-mob.jpg')}
       />
       <Item title="Hello" />
       {posts && posts.map(({ id, title, author }) => <Item key={id} title={title} text={author} />)}

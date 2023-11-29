@@ -3,14 +3,14 @@ import classNames from 'classnames';
 
 /*
 <Picture
-	src={require('../img/img.webp')
-	fallbackSrc={require('../img/img.png') // if browser doesn't support webp
+	src={require('../assets/img.webp')
+	fallbackSrc={require('../assets/img.png') // if browser doesn't support webp
 	alt="Image"
 	width={1036} // use for reserving a place during loading the page
 	height={598} // use for reserving a place during loading the page
 	media="(max-width: 768px)" // if display is smaller than 768px
-	mediaSrc={require('../img/img-mob.webp')
-	mediaFallbackSrc={require('../img/img-mob.png')
+	mediaSrc={require('../assets/img-mob.webp')
+	mediaFallbackSrc={require('../assets/img-mob.png')
 />
 */
 

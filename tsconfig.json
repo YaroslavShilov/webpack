@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ES7",
-      "DOM"
-    ],
+    "lib": ["ES7", "DOM"],
     // Type Checking Configuration
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -23,7 +20,6 @@
     "strictPropertyInitialization": true,
     "useUnknownInCatchVariables": true,
     // Modules Configuration
-    "baseUrl": "./",
     "target": "es5",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -31,20 +27,21 @@
     "jsx": "react-jsx",
     // Interop Constraints Configuration
     "esModuleInterop": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+
+    // Aliases
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": [
-    "src/**/*",
-    "environment.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "include": ["src/**/*", "global.d.ts"],
+  "exclude": ["node_modules"],
   "allow-env": true,
   "enable-env": true
 }

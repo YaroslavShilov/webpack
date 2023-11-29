@@ -4,10 +4,12 @@ import { buildDevServer } from './buildDevServer';
 import { buildPlugins } from './buildPlugins';
 import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
+import { buildOptimization } from './buildOptimization';
 
 export const buildWebpack = (options: BuildOptions): Configuration => {
   const { mode, paths } = options;
   const isDev = mode === 'development';
+  const isProd = mode === 'production';
 
   return {
     entry: paths.entry,
@@ -30,5 +32,10 @@ export const buildWebpack = (options: BuildOptions): Configuration => {
     },
 
     resolve: buildResolvers(options),
+
+    // optimization: buildOptimization(options),
+    performance: {
+      hints: isProd && 'error',
+    },
   };
 };
