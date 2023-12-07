@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Item } from './Item';
 import { Link, Outlet } from 'react-router-dom';
 import { Picture } from '@/components/Picture';

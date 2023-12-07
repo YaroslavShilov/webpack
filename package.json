@@ -37,9 +37,9 @@
     "mini-css-extract-plugin": "2.7.6",
     "postcss-loader": "7.3.3",
     "postcss-preset-env": "9.3.0",
+    "prettier": "3.1.0",
     "react-refresh": "0.14.0",
     "react-refresh-typescript": "2.0.9",
-    "react-router-dom": "6.20.0",
     "sass": "1.69.5",
     "sass-loader": "13.3.2",
     "style-loader": "3.3.3",
@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.20.0"
   }
 }

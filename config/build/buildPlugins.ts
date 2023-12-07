@@ -29,9 +29,6 @@ export const buildPlugins = ({ mode, paths, analyzer, platform }: BuildOptions):
       new Dotenv({
         path: '.env.development',
       }),
-      /*new HtmlWebpackPlugin({
-        template: paths.html,
-      }),*/
       new DefinePlugin({
         PLATFORM: JSON.stringify(platform),
       }),
@@ -52,10 +49,6 @@ export const buildPlugins = ({ mode, paths, analyzer, platform }: BuildOptions):
       new CopyPlugin({
         patterns: [{ from: path.resolve(paths.public, 'locales'), to: path.resolve(paths.output, 'locales') }],
       }),
-      /*new HtmlWebpackPlugin({
-        template: paths.html,
-        publicPath: '/',
-      }),*/
     );
   }
 
